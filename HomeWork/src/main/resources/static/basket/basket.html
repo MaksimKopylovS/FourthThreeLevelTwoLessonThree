@@ -1,0 +1,47 @@
+<H2>Корзина</H2>
+<table class="table table-hover" cellpadding="0" cellspacing="0">
+    <thead>
+    <tr>
+        <td>Название</td>
+        <td>Цена</td>
+        <td>Количество</td>
+        <td>Сумма</td>
+        <td>Удалить</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="p in basketProduct">
+        <td>{{p.title}}</td>
+        <td>{{p.cost}}</td>
+        <td>
+            <button class="btn " ng-click="decrimentCount(p.id)">-</button>
+            {{p.count}}
+            <button class="btn " ng-click="incrementCount(p.id)">+</button>
+        </td>
+        <td>{{p.sumCost}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="deleteProductFromBasket(p.id)">Удалить</button>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Итог {{totalCost}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <form novalidate ng-submit="createOrder()">
+                <label for="deliveryAddres">Адресс Доставки</label>
+                <input class="from-control" type="text" ng-model="order.addres"
+                       id="deliveryAddres">
+                <input class="btn btn-success" type="submit" value="Оформить Заказ">
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>

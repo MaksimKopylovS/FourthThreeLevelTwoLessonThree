@@ -1,0 +1,21 @@
+<div>
+    <h1>О нас</h1>
+    <p>
+        Добро пожаловать в Happy Market
+    </p>
+    <form class="form-signin" ng-submit="tryToReg()" style="max-width: 350px; padding: 15px; margin: 0 auto;">
+        <h1 class="h3 mb-3 font-weight-normal">Регистрация</h1>
+
+        <label for="regUsername" class="sr-only">Имя пользователя</label>
+        <input type="text" ng-model="user.userName" id="regUsername" class="form-control"
+               placeholder="Имя пользователя" style="margin-bottom: 10px;" required="">
+
+        <label for="regPassword" class="sr-only">Пароль</label>
+        <input type="password" ng-model="user.regPassword" id="regPassword" class="form-control" placeholder="Пароль"
+               style="margin-bottom: 10px;" required="">
+
+        <label for="regMail" class="sr-only">Почта</label>
+        <input type="email" ng-model="user.mail" id="regMail" class="form-control" placeholder="Почта">
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Отправить</button>
+    </form>
+</div>
